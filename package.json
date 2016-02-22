@@ -1,0 +1,25 @@
+{
+  "name": "restfulblogapp",
+  "version": "1.0.0",
+  "description": "This app will be a simple blog.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/James-H33/RESTfulBlogApp.git"
+  },
+  "author": "James-H33",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/James-H33/RESTfulBlogApp/issues"
+  },
+  "homepage": "https://github.com/James-H33/RESTfulBlogApp#readme",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "ejs": "^2.4.1",
+    "express": "^4.13.4",
+    "mongoose": "^4.4.4"
+  }
+}
