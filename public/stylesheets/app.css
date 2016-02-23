@@ -6,7 +6,11 @@ i.icon {
   margin-top: 7em;
 }
 
+.ui.segment {
+  background: #f9f9f9;
+}
+
 img {
-  width: 500px;
-  height: 300px;
+  max-width: 600px;
+  max-height: 400px;
 }
