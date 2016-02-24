@@ -1,13 +1,16 @@
-var methodOverride = require('method-override');
-var bodyParser     = require('body-parser');
-var mongoose       = require('mongoose');
-var express        = require('express');
-var app            = express();
+var expressSanitizer = require('express-sanitizer');
+var methodOverride   = require('method-override');
+var bodyParser       = require('body-parser');
+var mongoose         = require('mongoose');
+var express          = require('express');
+var app              = express();
 
 mongoose.connect('mongodb://localhost/restful_blog_app');
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true}));
+// expressSanitizer must go after bodyParser.
+app.use(expressSanitizer());
 app.use(methodOverride('_method'));
 
 var blogSchema = new mongoose.Schema({
@@ -43,8 +46,13 @@ app.get('/blogs/new', function(req, res){
   res.render('new');
 });
 
-// CREATE ROUTE
+// CREATE ROUTE ---- The console.log's will show how express-sanitizer works.
 app.post('/blogs', function(req, res) {
+  console.log(req.body);
+  req.body.blog.body = req.sanitize(req.body.blog.body);
+  console.log("================");
+  console.log(req.body);
+
   Blog.create(req.body.blog, function(err, newBlog) {
     if(err) {
       res.render('new');
@@ -78,6 +86,7 @@ app.get('/blogs/:id/edit', function(req, res) {
 
 // UPDATE ROUTE
 app.put('/blogs/:id', function(req, res) {
+  req.body.blog.body = req.sanitize(req.body.blog.body);
   // Blog.findByIdAndUpdate(id, newData, callback)
   Blog.findByIdAndUpdate(req.params.id, req.body.blog, function(err, updatedBlog) {
     if(err) {

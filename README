@@ -7,4 +7,8 @@ EJS
 Body-Parser
 Method-Override
 -- This allows for the use of PUT and Del methods in HTML5.
+Express-Sanitizer
+-- This eliminates the issue of users writing malicious scripts with text boxes.
 Semantic UI
+
+Chart.html -- Chart of RESTful Routes copyright of COLT STEELE @https://www.udemy.com/the-web-developer-bootcamp/learn/#/

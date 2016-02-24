@@ -3,11 +3,28 @@ i.icon {
 }
 
 .container.main {
-  margin-top: 7em;
+  margin-top: 5em;
 }
 
 .ui.segment {
   background: #f9f9f9;
+}
+
+.ui.secondary.button {
+  margin: 8px 0;
+}
+.ui.text.container img {
+  margin: 0 auto;
+}
+
+.ui.center.aligned.container li {
+  display: inline;
+  padding: 0 10px;
+}
+
+.ui.inverted.vertical.footer.segment {
+  margin-top: 60px;
+  text-align: center;
 }
 
 img {
@@ -17,4 +34,20 @@ img {
 
 #delete {
   display: inline;
+}
+
+@media only screen and (max-width: 770px) {
+  .ui.center.aligned.container li {
+    display: flex;
+    float: left;
+    text-decoration: none;
+  }
+
+  .ui.center.aligned.container {
+    clear: both;
+  }
+
+  .ui.divider:not(.vertical):not(.horizontal) {
+    clear: both;
+  }
 }
