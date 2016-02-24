@@ -5,4 +5,6 @@ Express
 MongoDB
 EJS
 Body-Parser
+Method-Override
+-- This allows for the use of PUT and Del methods in HTML5.
 Semantic UI

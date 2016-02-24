@@ -3,10 +3,9 @@
   <h1> Index Page</h1>
 
   <% blogs.forEach(function(blog) { %>
-    <div>
+    <div class="ui main text container segment">
       <h2> <%= blog.title %> </h2>
         <img src="<%= blog.image %>" alt="Mountain side picture of Bears">
-          <span> <%=  blog.created %></span>
             <p> <%= blog.body.substring(0, 100); %></p>
             <a href="/blogs/<%= blog._id %>">Read More</a>
       </div>
